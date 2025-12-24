@@ -1,9 +1,9 @@
 "use client";
 
-import Db from "../lib/dbb";
+import Db from "../lib/db";
 import { useEffect, useState } from "react";
 import Header from "../componenets/Header";
-import AddPedido from "@/lib/addPedido";
+import AddPedido from "../lib/addPedido";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loading from "../componenets/Loading";
