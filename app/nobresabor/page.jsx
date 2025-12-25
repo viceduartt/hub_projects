@@ -266,7 +266,11 @@ function Home() {
       if (hora > 17) {
         document.querySelector("body").className = "noite"
         document.querySelector("header").className = "noite"
+      }
 
+      if (hora >= 0) {
+        document.querySelector("body").className = "noite"
+        document.querySelector("header").className = "noite"
       }
     }
 
