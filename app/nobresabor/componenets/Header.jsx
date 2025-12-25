@@ -6,13 +6,16 @@ import { useEffect, useState } from "react";
 
 const logo = "images/logo.svg"
 const cart = "icons/pedidos.svg"
- 
+
 
 
 function Header() {
   const [qtdsPedidos, setQtdsPedidos] = useState(0)
 
   useEffect(() => {
+    console.log(window.innerWidth)
+
+
     if (sessionStorage.getItem("p") !== null) {
       let qtd = 0
 
@@ -24,6 +27,10 @@ function Header() {
       setQtdsPedidos(qtd)
     } else {
       setQtdsPedidos(0)
+    }
+
+    if (qtdsPedidos == 0) {
+      document.querySelector(".qtdPedido").style.opacity = 0
     }
   }, [])
 
@@ -87,16 +94,16 @@ function Header() {
         }
       }
 
-
       startMenu()
       closeMenu(1)
-
 
       header.addEventListener("mouseenter", () => {
         console.log(lock)
         startMenu()
 
       })
+
+
 
 
 

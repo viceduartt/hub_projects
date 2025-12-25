@@ -246,34 +246,51 @@ function Home() {
       })
     }
 
-    verDetalhes()
-    addPedido()
+    function getHora() {
+      const date = new Date()
+      const hora = date.getHours()
+      console.log(hora)
+
+
+      if (hora > 4) {
+        document.querySelector("body").className = "dia"
+        document.querySelector("header").className = "dia"
+      }
+
+      if (hora > 11) {
+        document.querySelector("body").className = "tarde"
+        document.querySelector("header").className = "tarde"
+
+      }
+
+      if (hora > 17) {
+        document.querySelector("body").className = "noite"
+        document.querySelector("header").className = "noite"
+
+      }
+    }
+
+    getHora()
+
+    //verDetalhes()
+    //addPedido()
 
     animaRotatePrato()
   }, [])
 
 
 
-  function getHora() {
-    if (time >= 4) {
-      msgHora = "licias da manhã!"
-      return 9
-    } else {
-      return 0
-    }
-  }
+
 
   function getPratos() {
-    if (getHora() === 0) {
-      return (
-        <>
-          <img className="pratoDestaque pratoPos1" data-id={pratos[0][0].id} src={pratos[0][0].images[0]} alt="" />
-          <img className="pratoDestaque pratoPos2" data-id={pratos[0][1].id} src={pratos[0][1].images[0]} alt="" />
-          <img className="pratoDestaque pratoPos3" data-id={pratos[0][2].id} src={pratos[0][2].images[0]} alt="" />
-          <img className="pratoDestaque pratoPos4" data-id={pratos[1][0].id} src={pratos[1][0].images[0]} alt="" />
-        </>
-      )
-    }
+    return (
+      <>
+        <img className="pratoDestaque pratoPos1" data-id={pratos[0][0].id} src={pratos[0][0].images[0]} alt="" />
+        <img className="pratoDestaque pratoPos2" data-id={pratos[0][1].id} src={pratos[0][1].images[0]} alt="" />
+        <img className="pratoDestaque pratoPos3" data-id={pratos[0][2].id} src={pratos[0][2].images[0]} alt="" />
+        <img className="pratoDestaque pratoPos4" data-id={pratos[1][0].id} src={pratos[1][0].images[0]} alt="" />
+      </>
+    )
   }
 
   return (

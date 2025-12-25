@@ -193,7 +193,7 @@ function Cardapio() {
         opacity: 1,
         onComplete: () => {
 
-          window.location.href = host + "detalhePrato"
+          //window.location.href = host + "detalhePrato"
         }
       })
     }
@@ -205,7 +205,7 @@ function Cardapio() {
         y: "-14%",
         opacity: 0.5,
         onComplete: () => {
-          animaLoadingPageCard(e)
+          a//nimaLoadingPageCard(e)
         }
       })
     }
